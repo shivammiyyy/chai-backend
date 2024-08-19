@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
-// import { DB_NAME } from "../constants.js";
-export const DB_NAME = 'videotube'
+import { DB_NAME } from "../constants.js";
 
 const connectDB = async () => {
     try {
-        const connectionInstance = await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`)
-        console.log(`\n MongoDB connected !! DB HOST: ${connectionInstance.connection.host}`);
+        const connectionInstance = await mongoose.connect(`mongodb+srv://Sumitgaud:Sumitgaud25@5umitra.5hbq8rl.mongodb.net`)
+        console.log(`\n MONGODB connect !!! DB HOST : ${connectionInstance.connection.host}`);
+        
     } catch (error) {
-        console.log("MONGODB connection FAILED ", error);
+        console.log("MONGODB CONNETING ERROR", error);
         process.exit(1)
     }
 }
